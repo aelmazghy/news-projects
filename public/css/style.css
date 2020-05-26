@@ -1364,9 +1364,13 @@ textarea {
     height: 100%;
     background: rgba(0, 0, 0, 0.55);
     transition: 0.15s; }
-.project-list.grid-lg-3 .item:hover .mask {
-    opacity: 0 !important;
+.project-list.grid-lg-3 .item .mask {
+    opacity: .8;
 }
+.project-list.grid-lg-3 .item:hover .mask {
+    opacity: 0;
+}
+
 .media-row .item .media-header {
     position: absolute;
     top: 1rem;
@@ -4662,4 +4666,15 @@ strong {
 }
 h5.sr-up-td1 {
     color: #bbb;
+}
+.project-list.grid-lg-3 .item .icon img{
+    width: 25px;
+    left: 0;
+    margin-left: -20px;
+}
+.project-list.grid-lg-3 .item  .sr-up-td2{
+    color:#fff;
+}
+.project-list.grid-lg-3 .item .media-img .img {
+    background-repeat: no-repeat; background-position: center center; background-size: cover;
 }

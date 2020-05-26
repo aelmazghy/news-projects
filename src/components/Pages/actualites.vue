@@ -1,4 +1,5 @@
 <template>
+
     <div>
         <header-page></header-page>
         <full-page :options="options" id="fullpage">
@@ -32,10 +33,11 @@
 </template>
 
 <script>
+    var moment = require('moment');
+
     import HeaderPage from './headerPage'
     import FooterPage from './footerPage'
     import croustiNews from "./croustiNews";
-
 
     export default {
         name: 'actualites',
@@ -53,50 +55,6 @@
                     autoScrolling: false,
                     fitToSection: false,
                 },
-                Ndata:[
-                    {
-                        id:"1",
-                        title:"Lorem Ipsum is simply",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img1.jpg"
-                    },
-                    {
-                        id:"2",
-                        title:"tText of the printing and typesetting industry.",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img2.jpg"
-                    },
-                    {
-                        id:"3",
-                        title:"Lorem Ipsum is simply dummy industry.",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img3.jpg"
-                    },
-                    {
-                        id:"4",
-                        title:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img4.jpg"
-                    },
-                    {
-                        id:"5",
-                        title:"Lorem Ipsum typesetting industry.",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img5.jpg"
-                    },
-                    {
-                        id:"6",
-                        title:"Lorem Ipsum",
-                        date:"01/01/2020",
-                        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                        img:"img/actualites/img6.jpg"
-                    }
-                ],
             }
         },
         methods: {
@@ -105,6 +63,9 @@
             },
         },
         computed: {
+            Ndata(){
+                return this.$store.state.Ndata;
+            },
             screenwidth() {
                 if (screen.width > 400) {
                     return 70
