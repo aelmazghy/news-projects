@@ -19,7 +19,7 @@
             <div class="backgroundGreen" id="welcome">
                 <div class="media-row">
                     <div class="row backgroundGreen">
-                        <crousti-news :itemsNumber="6" :newsData="Ndata">
+                        <crousti-news :itemsNumber="6" :newsData="$store.state.news">
 
                         </crousti-news>
                     </div>
@@ -34,7 +34,6 @@
 
 <script>
     var moment = require('moment');
-
     import HeaderPage from './headerPage'
     import FooterPage from './footerPage'
     import croustiNews from "./croustiNews";
@@ -63,9 +62,6 @@
             },
         },
         computed: {
-            Ndata(){
-                return this.$store.state.Ndata;
-            },
             screenwidth() {
                 if (screen.width > 400) {
                     return 70

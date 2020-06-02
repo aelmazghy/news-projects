@@ -36,7 +36,7 @@
                                     </a>
                                 </div><!--btns-action-->
                                 <div class="btns-action sr-up-td3 text-primary">
-                                    <a href="#" class="btn btn-normal btn-white spaceTop">
+                                    <a href="" class="btn btn-normal btn-white spaceTop">
                                         <span class="icon"><img src="img/pdf-icone.svg" width="35px"></span>
                                         <span class="text">PDF</span>
                                     </a>

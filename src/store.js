@@ -6,8 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     Ndata:[
-      {id:"1",title:"Alan"},
-      {id:"2",title:"Abdess"}
+      {id:"1",title:"Alan", link:"https://app.slack.com/pdf.pdf"}
   ]
   },
   getters: {
