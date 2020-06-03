@@ -4662,7 +4662,7 @@ strong {
 }
 .project-list.grid-lg-3 .item .media-body{text-align: left;}
 .media-row .item .media-body p {
-    font-size: 15px;
+    font-size: 25px;
 }
 h5.sr-up-td1 {
     color: #bbb;
@@ -4678,3 +4678,4 @@ h5.sr-up-td1 {
 .project-list.grid-lg-3 .item .media-img .img {
     background-repeat: no-repeat; background-position: center center; background-size: cover;
 }
+.sr-up-td1{color:#ddd;}

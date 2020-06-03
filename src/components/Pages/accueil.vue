@@ -17,6 +17,13 @@
                 </div>
             </div>
         </full-page>
+        <div class="backgroundGreen" id="welcome">
+            <div class="media-row">
+                <div class="row backgroundGreen">
+                    <crousti-news :itemsNumber="3" :newsData="$store.state.news"></crousti-news>
+                </div>
+            </div>
+        </div>
         <footer-page> </footer-page>
     </div>
 </template>
@@ -24,15 +31,13 @@
 <script>
     import * as easings from 'vuetify/es5/services/goto/easing-patterns'
     import FooterPage from './footerPage'
-    import coucou from "./coucou"
-    import news from "./croustiNews";
+    import croustiNews from './croustiNews'
 
     export default {
         name: "accueil",
         components : {
             FooterPage,
-            coucou,
-            news
+            croustiNews
         },
         data() {
             return {

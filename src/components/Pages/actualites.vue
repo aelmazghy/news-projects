@@ -19,9 +19,7 @@
             <div class="backgroundGreen" id="welcome">
                 <div class="media-row">
                     <div class="row backgroundGreen">
-                        <crousti-news :itemsNumber="6" :newsData="$store.state.news">
-
-                        </crousti-news>
+                        <crousti-news :itemsNumber="18" :newsData="$store.state.news"></crousti-news>
                     </div>
                 </div>
             </div>
@@ -33,10 +31,9 @@
 </template>
 
 <script>
-    var moment = require('moment');
     import HeaderPage from './headerPage'
     import FooterPage from './footerPage'
-    import croustiNews from "./croustiNews";
+    import croustiNews from './croustiNews'
 
     export default {
         name: 'actualites',
@@ -44,6 +41,7 @@
             HeaderPage,
             FooterPage,
             croustiNews
+
         },
         data() {
             return {

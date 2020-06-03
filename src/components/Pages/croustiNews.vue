@@ -11,40 +11,34 @@
                         <div class="item media media-square text-primary" v-for="news in newsData.slice(0, itemsNumber)">
                             <div class="media-img">
                                 <div class="mask"></div>
-                                <img :src="news.img" :alt="news.altImg" class="img-block" style="display: none;">
-                                <div class="img" :style="{ backgroundImage: 'url(' + news.img + ')' }" :alt="news.altImg"></div>
+                                <img :src="news.imag" :alt="news.imgAlt" class="img-block" style="display: none;">
+                                <div class="img" :style="{ backgroundImage: 'url(' + news.imag + ')' }" :alt="news.imgAlt"></div>
                             </div>
                             <div class="media-body">
                                 <a href="#">
-                                    <h5 class="sr-up-td1">{{ news.date }}</h5>
+                                    <h2 class="sr-up-td1">{{ formatDate(news.date) }}</h2>
                                     <h2 class="sr-up-td2 display-6 mt-5 mb-5">{{ news.title }}</h2>
                                 </a>
                                 <div class="desc">
-                                    <p class="pSpacer" style="background-color: rgba(255, 255, 255, 0.72);color: #7d7d7d;border-radius: 5px;">
-                                        Pour vos fêtes et banquets, en famille ou entre amis, Croustillance vous propose
-                                        un large choix de menus pour faire pétiller les papilles de vos invités.
+                                    <p class="pSpacer" style="background-color:rgba(218, 218, 218, 0.72);color: #fff;border-radius: 5px;">
+                                        {{ news.description }}
                                     </p>
                                 </div>
                             </div>
-                            <div class="media-footer sr-up-td4">
+
+                            <div class="media-footer sr-up-td4" v-if="news.urlType != 'none'">
                                 <div class="btns-action sr-up-td3 text-primary">
-                                    <a href="#" class="btn btn-normal btn-white spaceTop">
-                                        <span class="text">Détails</span>
-                                        <span class="icon">
+                                    <a class="btn btn-normal btn-white spaceTop" @click="goToLink(news.urlLink,news.urlType)">
+                                        <span class="icon" v-if="news.urlType == 'pdf'"><img src="img/pdf-icone.svg" width="35px"></span>
+                                        <span class="text">{{news.urltext}}</span>
+                                        <span class="icon" v-if="news.urlType === 'interne' || news.urlType === 'externe'">
                                             <span class="arrow-right"></span>
                                         </span>
                                     </a>
-                                </div><!--btns-action-->
-                                <div class="btns-action sr-up-td3 text-primary">
-                                    <a href="" class="btn btn-normal btn-white spaceTop">
-                                        <span class="icon"><img src="img/pdf-icone.svg" width="35px"></span>
-                                        <span class="text">PDF</span>
-                                    </a>
-                                </div><!--btns-action-->
+                                </div>
                             </div>
                         </div>
                         <!-- an item -->
-
                     </div>
                 </div>
             </div>
@@ -55,8 +49,36 @@
 </template>
 
 <script>
+    import moment from "moment";
+
     export default {
-        name: "croustiNews"
+        name: "croustiNews",
+        props: ['newsData', 'itemsNumber'],
+
+    methods: {
+        afterLoad() {
+            console.log('After load')
+        },
+
+        formatDate(dateEvent){
+            moment.locale('fr');         // fr
+            return moment(dateEvent).format('LL');  // Jun 2, 2020 11:44 AM
+        },
+
+        goToLink(urlLink, urlType){
+            switch(urlType) {
+                case 'pdf':
+                    window.open(urlLink, '_blank');
+                    break;
+                case "interne":
+                    this.$router.push({ path:urlLink });
+                    break;
+                case 'externe':
+                    window.open(urlLink, "_blank");
+                    break;
+            }
+        }
+    }
     }
 </script>
 
