@@ -1,4 +1,5 @@
 <template>
+
     <div id="newsData">
         <div class="section fp-auto-height fp-section active section-anim fp-completely" data-section="projects-grid" data-anchor="projects-grid" style="height: 627px;">
              <!-- Begin of section wrapper -->
@@ -78,6 +79,10 @@
                     break;
             }
         }
+    },
+
+    computed: {
+
     }
     }
 </script>
