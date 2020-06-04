@@ -50,10 +50,10 @@
 </template>
 
 <script>
-    import moment from "moment";
+    import moment from 'moment';
 
     export default {
-        name: "croustiNews",
+        name: 'croustiNews',
         props: ['newsData', 'itemsNumber'],
 
     methods: {
@@ -71,11 +71,11 @@
                 case 'pdf':
                     window.open(urlLink, '_blank');
                     break;
-                case "interne":
+                case 'interne:
                     this.$router.push({ path:urlLink });
                     break;
                 case 'externe':
-                    window.open(urlLink, "_blank");
+                    window.open(urlLink, '_blank');
                     break;
             }
         }

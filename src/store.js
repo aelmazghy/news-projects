@@ -28,8 +28,6 @@ export default new Vuex.Store({
 
     getNews({ commit }, payload) {
       commit('set_news', payload)
-
-      alert('ok');
     }
 
 
