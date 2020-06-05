@@ -6,6 +6,7 @@
             <div class="section-wrapper fullwidth with-margin">
                 <!-- content -->
                 <div class="section-content">
+
                     <!-- project list -->
                     <div class="project-list grid-1 grid-md-2 grid-lg-3 anim">
                         <!-- an item -->
@@ -71,7 +72,7 @@
                 case 'pdf':
                     window.open(urlLink, '_blank');
                     break;
-                case 'interne:
+                case 'interne':
                     this.$router.push({ path:urlLink });
                     break;
                 case 'externe':
