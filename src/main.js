@@ -22,7 +22,5 @@ new Vue({
             .then(response => (
                 this.$store.dispatch('getNews', response.data)
             ))
-
-
     }
 }).$mount('#app')
