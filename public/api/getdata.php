@@ -12,15 +12,11 @@ $db = new PDO('mysql:host=localhost;dbname=croustillance', $user, $password);
 
 
 
-$sql = $db->prepare("SELECT * FROM news ORDER BY date");
+$sql = $db->prepare("SELECT id,title,date,description,imag,imgAlt,urltext,urlLink,urlType FROM news");
 $sql->execute();
-$news = $sql->fetchAll();
 
+$news = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
-<pre>
-    <?php print_r(json_encode($news)); ?>
-</pre>
-
 
