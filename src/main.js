@@ -8,10 +8,7 @@ import vuetify from './plugins/vuetify';
 import VueFullPage from 'vue-fullpage.js'
 import axios from "axios";
 
-$url = './getdata.php'; // path to your JSON file
-$data = file_get_contents($url); // put the contents of the file into a variable
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(VueFullPage);
 new Vue({
@@ -21,7 +18,7 @@ new Vue({
     render: h => h(App),
     created() {
         axios
-        .get('./getdata.php')
+        .get('./api/getdata.php')
             .then(response => (
                 this.$store.dispatch('getNews', response.data)
             ))
