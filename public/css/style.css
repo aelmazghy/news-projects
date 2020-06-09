@@ -4657,25 +4657,3 @@ strong {
     font-family: Nunito,sans-serif;
     font-weight: 600;
 }
-.project-list.grid-lg-3 .item {
-    overflow: hidden;
-}
-.project-list.grid-lg-3 .item .media-body{text-align: left;}
-.media-row .item .media-body p {
-    font-size: 25px;
-}
-h5.sr-up-td1 {
-    color: #bbb;
-}
-.project-list.grid-lg-3 .item .icon img{
-    width: 25px;
-    left: 0;
-    margin-left: -20px;
-}
-.project-list.grid-lg-3 .item  .sr-up-td2{
-    color:#fff;
-}
-.project-list.grid-lg-3 .item .media-img .img {
-    background-repeat: no-repeat; background-position: center center; background-size: cover;
-}
-.sr-up-td1{color:#ddd;}

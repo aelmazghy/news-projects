@@ -1,6 +1,6 @@
 <?php include "header.php";
 
-$news = $db->query('SELECT id,datenews,title,description,imag,imgAlt,urltext,urlLink,urlType FROM news');
+$news = $db->query('SELECT id,datenews,title,description,imag,imgAlt,urltext,urlLink,urlType,vues FROM news');
 $news->execute();
 $news->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -55,7 +55,7 @@ $news->setFetchMode(PDO::FETCH_ASSOC);
                                     <td>'. $news["title"].'</td>
                                     <td>'. $news["datenews"].'</td>
                                     <td>'. $news["description"].'</td>
-                                    <td>222</td>
+                                    <td>'. $news["vues"].'</td>
                                     <td>
                                         <a href="#" class="btn btn-info btn-xs">
                                             <i class="fas fa-pen"></i>
