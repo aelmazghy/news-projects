@@ -1408,7 +1408,8 @@ textarea {
     position: relative;}
 .media-square .media-img {
     position: relative;
-    height: 100%;
+    height: 500px;
+    overflow: hidden;
     width: 100%; }
 .media-square .media-img .mask {
     content: "";
@@ -4292,3 +4293,6 @@ strong {
 }
 #newsTable .td-btn{display: flex;}
 #newsTable .td-btn a{    margin-right: 10px;}
+#demonews .project-list .item{
+    width: 100%;
+}

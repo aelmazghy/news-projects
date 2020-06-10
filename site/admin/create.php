@@ -41,9 +41,9 @@ $news->setFetchMode(PDO::FETCH_ASSOC);
                         <div class='input-group date'>
                             <input type="text" v-model="datenew" class="form-control datepicker">
                             {{ myDateNew() }}
-                            <span class="input-group-addon">
-                          <span><i class="fas fa-calendar-alt"></i></span>
-                        </span>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
                         </div>
                     </div>
 
