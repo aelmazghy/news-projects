@@ -56,7 +56,7 @@ $news->setFetchMode(PDO::FETCH_ASSOC);
                                     <td>'. $news["datenews"].'</td>
                                     <td>'. $news["description"].'</td>
                                     <td>'. $news["vues"].'</td>
-                                    <td>
+                                    <td class="td-btn">
                                         <a href="#" class="btn btn-info btn-xs">
                                             <i class="fas fa-pen"></i>
                                         </a>
