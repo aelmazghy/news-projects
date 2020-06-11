@@ -4294,5 +4294,5 @@ strong {
 #newsTable .td-btn{display: flex;}
 #newsTable .td-btn a{    margin-right: 10px;}
 #demonews .project-list .item{
-    width: 100%;
+    width: 100%;overflow: hidden;
 }

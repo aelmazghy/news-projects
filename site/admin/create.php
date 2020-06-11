@@ -1,8 +1,5 @@
 <?php include "header.php";
 
-$news = $db->query('SELECT id,datenews,title,description,imag,imgAlt,urltext,urlLink,urlType,vues FROM news');
-$news->execute();
-$news->setFetchMode(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -231,8 +228,8 @@ $news->setFetchMode(PDO::FETCH_ASSOC);
                     ctx.drawImage(img,0,0);
                 },
                 formatDate(dateEvent){
-                    moment.locale('fr');         // fr
-                    return moment(dateEvent).format('LL');  // Jun 2, 2020 11:44 AM
+                    moment.locale('fr');
+                    return moment(dateEvent).format('LL');
                 },
                 myDateNew(){
                     var args = {
