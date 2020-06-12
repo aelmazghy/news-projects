@@ -41,7 +41,6 @@
                                                v-model="datenew"
                                                locale="fr"
                                                placeholder="Sélectionner une date"
-
                             >
                             </b-form-datepicker>
 
@@ -71,13 +70,10 @@
                             <label for="new-urlLink">Fichier PDF</label>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file"  class="custom-file-input" id="inputGroupFile03" v-model="checkfile"
-
-
-                                    >
-                                    <!-- onchange="if(
+                                    <input type="file"  class="custom-file-input" id="inputGroupFile03"
+                                   onchange="if(
                                                document.getElementById('inputGroupFile').value)document.getElementById('custom-file-label').innerHTML=document.getElementById('inputGroupFile').value;
-                                           else document.getElementById('custom-file-label').innerHTML='Ajouter un PDF'"-->
+                                           else document.getElementById('custom-file-label').innerHTML='Ajouter un PDF'" >
 
                                     <label class="custom-file-label" for="inputGroupFile03" id="custom-file-label">Ajouter un PDF</label>
                                 </div>
@@ -124,7 +120,7 @@
                                     </div>
                                     <div class="media-body">
                                         <a href="#">
-                                            <h2 class="sr-up-td1">{{ datenew }}</h2>
+                                            <h2 class="sr-up-td1">{{ formatDate(datenew) }}</h2>
                                             <h2 class="sr-up-td2 display-6 mt-3 mb-3">{{ title }}</h2>
                                         </a>
                                         <div class="desc">
@@ -170,13 +166,13 @@
         new Vue({
             el: '#demonews',
             data: {
-                error:'',
+                datenew: '12 juin 2020',
                 title: '',
                 description: '',
                 urltext: '',
                 imag: '',
                 checkfile: '',
-                datenew: '',
+
 
 
                 typeLinks: [
@@ -240,7 +236,6 @@
                     reader.readAsDataURL(files[0]);
 
                 },
-
                 drawCanvasImage(img) {
                     var canvas = this.$refs.imageCanvas;
                     canvas.width = img.width;
@@ -249,9 +244,9 @@
                     var ctx = canvas.getContext('2d');
                     ctx.drawImage(img,0,0);
                 },
-                formatDate(dateEvent){
+                formatDate(datenew){
                     moment.locale('fr');
-                    return moment(dateEvent).format('LL');
+                    return moment(datenew).format('ll');
                 }
             } // end methods
 
