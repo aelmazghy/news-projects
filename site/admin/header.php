@@ -9,7 +9,10 @@ include "connectdb.php"
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
 
+    <!-- Add Vue and BootstrapVue scripts just before the closing </body> tag -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -25,6 +28,8 @@ include "connectdb.php"
     <script type="text/javascript" src="js/table.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://unpkg.com/vuelidate@0.7.5/dist/vuelidate.min.js"></script>
+    <script src="https://unpkg.com/vuelidate@0.7.5/dist/validators.min.js"></script>
 
 
     <title>Croustillance - Liste actualités</title>

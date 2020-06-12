@@ -36,11 +36,15 @@
                     <div class="form-group">
                         <label>Date de publication</label>
                         <div class='input-group date'>
-                            <input type="text" v-model="datenew" class="form-control datepicker">
-                            {{ myDateNew() }}
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupFileAddon01"><i class="fas fa-calendar-alt"></i></span>
-                            </div>
+
+                            <b-form-datepicker class="form-control" id="news-datepicker"
+                                               v-model="datenew"
+                                               locale="fr"
+                                               placeholder="Sélectionner une date"
+
+                            >
+                            </b-form-datepicker>
+
                         </div>
                     </div>
 
@@ -67,10 +71,18 @@
                             <label for="new-urlLink">Fichier PDF</label>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-                                    <label class="custom-file-label" for="inputGroupFile03">Ajouter un PDF</label>
+                                    <input type="file"  class="custom-file-input" id="inputGroupFile03" v-model="checkfile"
+
+
+                                    >
+                                    <!-- onchange="if(
+                                               document.getElementById('inputGroupFile').value)document.getElementById('custom-file-label').innerHTML=document.getElementById('inputGroupFile').value;
+                                           else document.getElementById('custom-file-label').innerHTML='Ajouter un PDF'"-->
+
+                                    <label class="custom-file-label" for="inputGroupFile03" id="custom-file-label">Ajouter un PDF</label>
                                 </div>
                             </div>
+                                {{checkfile && checkfile.name}}
                             </div>
                             <div class="has-url-link" v-if="typeLinkSelected.name === 'Interne' || typeLinkSelected.name === 'Externe'">
                             <label for="new-urlLink">URL</label>
@@ -83,19 +95,15 @@
                                     {{ internalLink.path }}
                                 </option>
                             </select>
-
-
                         </div>
-                    </div>
                     </div>
 
                 </div><!-- /.card-box -->
-
+                </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-primary">Ajouter</button>
                 </div>
             </form>
-
         </div>
         <div class="col-xs-12 col-lg-6 side-apercu float-right">
             <div class="card-box">
@@ -126,8 +134,9 @@
                                         </div>
                                     </div>
 
+
                                     <div class="media-footer sr-up-td4" v-if="typeLinkSelected.name != 'Aucun'">
-                                        <div class="btns-action sr-up-td3 text-primary">
+                                        <div class="btns-action sr-up-td3 text-primary" >
                                             <a class="btn btn-normal btn-white spaceTop">
                                                 <span class="icon" v-if="typeLinkSelected.name == 'PDF'"><img src="img/pdf-icone.svg" width="35px"></span>
                                                 <span class="text">{{urltext}}</span>
@@ -146,9 +155,12 @@
             </div>
 
         </div>
-    </div><!--end card-box-->
     </div>
+<style>
 
+
+
+</style>
     <script src="https://unpkg.com/vue-upload-multiple-image@1.0.2/dist/vue-upload-multiple-image.js"></script>
     <!--end sidebar div-->
     <script>
@@ -158,11 +170,14 @@
         new Vue({
             el: '#demonews',
             data: {
+                error:'',
                 title: '',
                 description: '',
                 urltext: '',
                 imag: '',
-                datenew: moment().format('MM/DD/YYYY'),
+                checkfile: '',
+                datenew: '',
+
 
                 typeLinks: [
                     {name: 'Aucun', id: 1},
@@ -197,8 +212,15 @@
             },
             created: function() {
                 this.typeLinkSelected = this.typeLinks.find(i => i.id === this.typeLinkSelected);
+
             },
             methods: {
+                status(validation) {
+                    return {
+                        error: validation.$error,
+                        dirty: validation.$dirty
+                    }
+                },
                 updateCanvasImage(e) {
 
                     var self = this;
@@ -230,17 +252,8 @@
                 formatDate(dateEvent){
                     moment.locale('fr');
                     return moment(dateEvent).format('LL');
-                },
-                myDateNew(){
-                    var args = {
-                        format: 'll',
-                        locale: 'fr'
-                    };
-                    this.$nextTick(function() {
-                        $('.datepicker').datetimepicker(args)
-                    })
                 }
-            }
+            } // end methods
 
 
         })

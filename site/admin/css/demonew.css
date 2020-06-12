@@ -4296,3 +4296,10 @@ strong {
 #demonews .project-list .item{
     width: 100%;overflow: hidden;
 }
+button#news-datepicker {
+    float: right;
+    text-align: right;
+    background: none;
+    color: #8c8c8c;
+}
+#news-datepicker__dialog_ .btn{background: none;color: #6c757d;}
